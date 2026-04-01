@@ -14,10 +14,11 @@ const app = express()
 
 
 
-app.options('*', cors({
+const corsOptions = {
   origin: 'https://mern-stack-frontend-alpha.vercel.app',
   credentials: true
-}))
+}
+app.use(cors(corsOptions))
 // middleware(built-in in express)
 // parse incoming request bodies that are JSON and make them available as req.body
 app.use(express.json())
