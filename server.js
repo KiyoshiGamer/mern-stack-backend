@@ -48,4 +48,3 @@ mongoose.connect(process.env.MONGO_URI)
     console.log(error)
 })
 
-2
