@@ -12,13 +12,12 @@ const userRoutes = require('./routes/user')
 // setup express server, app is the object created from express()
 const app = express()
 
-app.options('*', cors())
 
-app.use(cors({
-    origin: 'https://mern-stack-frontend-alpha.vercel.app',
-    credentials: true
+
+app.options('*', cors({
+  origin: 'https://mern-stack-frontend-alpha.vercel.app',
+  credentials: true
 }))
-
 // middleware(built-in in express)
 // parse incoming request bodies that are JSON and make them available as req.body
 app.use(express.json())
