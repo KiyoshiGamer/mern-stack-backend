@@ -4,12 +4,15 @@ require('dotenv').config()
 // require - import modules os we can use there functionalit
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 const workoutRoutes = require('./routes/workouts')
 const userRoutes = require('./routes/user')
 
 
 // setup express server, app is the object created from express()
 const app = express()
+
+app.options('*', cors())
 
 app.use(cors({
     origin: 'https://mern-stack-frontend-alpha.vercel.app',
